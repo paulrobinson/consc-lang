@@ -2,10 +2,11 @@
 
 GH_ORG=$1
 REPORT="$PWD/$2"
+CODE_DATE="$3"
 GREP_BASE_CMD="grep --exclude-dir='.git' -rni"
 
 if [ "$2" == "" ]; then
-  echo "Usgae: $0 <GH Org name> <Report output path>"
+  echo "Usgae: $0 <GH Org name> <Report output path> [code date. Format: 2021-01-31]"
   exit -1
 fi
 
@@ -25,6 +26,13 @@ for REPO in $REPOS; do
   cd $REPO_NAME
  
   DEFAULT_BRANCH=$(git branch --show-current);
+
+  if [ "$CODE_DATE" ]; then
+    CUR_BRANCH=$(git branch --show-current)
+    COMMIT_SHA=$(git rev-list -1 --before=$CODE_DATE $CUR_BRANCH)
+    echo "Checking out code from $CODE_DATE on branch: $CUR_BRANCH with SHA: $COMMIT_SHA"
+    git checkout $COMMIT_SHA
+  fi
 
   rm -rf .git 
   MASTER_COUNT=$($GREP_BASE_CMD 'master' . | wc -l)
