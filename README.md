@@ -3,6 +3,9 @@ This project is a bash script that searches over all repositories in a specified
 
 You can take the produced CSV file and enter into your favourite spreasheeting tool for further analysis.
 
+## Prerequisites
+You need the GitHub CLI command installing first: https://github.com/cli/cli
+
 ## Usage:
 
     report.sh <GH org name> <path to report> [code date. Format: 2021-01-31]
