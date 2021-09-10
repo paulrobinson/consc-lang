@@ -6,7 +6,7 @@ CODE_DATE="$3"
 GREP_BASE_CMD="grep --exclude-dir='.git' -rni"
 
 if [ "$2" == "" ]; then
-  echo "Usgae: $0 <GH Org name> <Report output path> [code date. Format: 2021-01-31]"
+  echo "Usage: $0 <GH Org name> <Report output path> [code date. Format: 2021-01-31]"
   exit -1
 fi
 
