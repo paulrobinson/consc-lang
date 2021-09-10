@@ -1,5 +1,5 @@
 # Description
-This project is a bash script that searches over all repositories in a specified GitHub org, looking for occurnaces of problematic language (currently: `master`, `slave`, `blacklist`, `whitleist`) and produces a CSV file with the results. The script can also be configured to look back in time to generate a report in the past. This is useful to compare how well you've done at removing the problematic language occurances.
+This project is a bash script that searches over all repositories in a specified GitHub org, looking for occurances of problematic language (currently: `master`, `slave`, `blacklist`, `whitleist`) and produces a CSV file with the results. The script can also be configured to look back in time to generate a report in the past. This is useful to compare how well you've done at removing the problematic language occurances.
 
 You can take the produced CSV file and enter into your favourite spreasheeting tool for further analysis.
 
